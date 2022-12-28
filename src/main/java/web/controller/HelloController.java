@@ -16,8 +16,7 @@ public class HelloController {
 		messages.add("Hello!");
 		messages.add("This is basic user LIST/ADD/EDIT/DELETE service");
 		messages.add("You can check the list of available users by clicking link below");
-		model.addAttribute("messages", messages);
+		model.addAttribute("welcomeMessages", messages);
 		return "index";
 	}
-	
 }

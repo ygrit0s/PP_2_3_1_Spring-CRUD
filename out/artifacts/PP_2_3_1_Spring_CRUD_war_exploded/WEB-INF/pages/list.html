@@ -43,7 +43,7 @@
 
     </tr>
     <tr th:each="user : ${userList}">
-        <td><a th:href="@{'/users/' + ${user.id}}" th:utext="${user.id}">UserId</a></td>
+        <td><a th:href="@{'/users/  ' + ${user.id}}" th:utext="${user.id}">UserId</a></td>
         <td th:utext="${user.name}">Name</td>
         <td th:utext="${user.lastName}">LastName</td>
         <td th:utext="${user.age}">Age</td>

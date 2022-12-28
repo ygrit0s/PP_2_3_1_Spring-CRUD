@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class UserServiceImpl implements UserService {
 	public static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class.getName());
 	
-	private UserDAO userDAO;
+	private final UserDAO userDAO;
 	
 	@Autowired
 	public UserServiceImpl(UserDAO userDAO) {
@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public User getUser(long id) {
+	public User getUser(Long id) {
 		LOGGER.log(Level.INFO, "User под номером {0} был успешно извлечён%n", new Object[]{id});
 		return userDAO.getUser(id);
 	}
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public void removeUser(long id) {
+	public void removeUser(Long id) {
 		LOGGER.log(Level.INFO, "User под номером {0} удалён из базы данных%n", new Object[]{id});
 		userDAO.removeUser(id);
 	}

@@ -11,7 +11,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private long id;
+	private Long id;
 	
 	@Column
 	@Pattern(regexp = "[A-Za-z]{2,15}", message = "Name should be between 2 and 15 latin characters")
@@ -27,7 +27,6 @@ public class User {
 	private Byte age;
 	
 	public User() {
-	
 	}
 	
 	public User(String name, String lastName, Byte age) {

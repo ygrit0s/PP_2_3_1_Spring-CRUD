@@ -19,11 +19,12 @@ public class UserDAOImpl implements UserDAO {
 	public List<User> userList() {
 		return entityManager.createQuery("from User", User.class).getResultList();
 	}
-	
+
 	@Override
-	public User getUser(long id) {
+	public User getUser(Long id) {
 		return entityManager.find(User.class, id);
 	}
+	
 	@Override
 	public void addUser(User user) {
 		entityManager.persist(user);
@@ -35,7 +36,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
-	public void removeUser(long id) {
+	public void removeUser(Long id) {
 		entityManager.remove(getUser(id));
 	}
 }
